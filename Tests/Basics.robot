@@ -9,15 +9,22 @@ Resource    Resources/keywords.resource
 Resource    Resources/Suite_Setup.resource
 
 
-*** Test Cases ***
-Test Case 1 -- Hello World!
-    Set Selenium Speed    1 second
-    Log To Console    Hello world!
-    Open Browser    browser=chrome
-    Go To    https://www.google.com/
-    Wait Until Element Is Visible    //button[@id="L2AGLb"]    10 seconds
-    Click Element    //button[@id="L2AGLb"]
-    Input Text    //*[@id="APjFqb"]    Hello world!
-    Press Keys    //*[@id="APjFqb"]    RETURN
+*** Variables ***
+${URL}=             https://parabank.parasoft.com/parabank/contact.htm
+${BROWSER}=         Chrome
+${NAME SURNAME}=    TestName TestSurname
 
-    Sleep    5s
+
+*** Test Cases ***
+#    this is a comment
+TC1 -- Parabank -- Send message to customer care from contact form page    # this is a test case name
+    Set Selenium Speed    1 second
+    Open Browser    ${URL}    ${BROWSER}
+    Input Text    //*[@id="name"]    ${NAME SURNAME}
+    Input Text    //*[@id="email"]    testEmail@testemail.test
+    Input Text    //*[@id="phone"]    +111 222 333 444
+    Input Text    //*[@id="message"]    Some random test text qwerty 533@ !?# (with details)
+    Click Element    //*[@id="contactForm"]/table/tbody/tr[5]/td[2]/input
+    Element Should Contain
+    ...    rightPanel
+    ...    Thank you ${NAME SURNAME}\nA Customer Care Representative will be contacting you.

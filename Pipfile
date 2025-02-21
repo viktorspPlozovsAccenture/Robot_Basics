@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+rpaframework = "==24.1.2"
+robotframework-robosapiens = ">=2.0.0"
+robotframework-archivelibrary = ">=0.4.2"
+robotframework-sshlibrary = ">=3.8.0"
+python-dateutil = ">=2.8"
+ibm_db = ">=3.1.2"
+robotframework-soaplibrary = "*"
+robotframework-requests = "*"
+robotframework-csvlibrary = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"

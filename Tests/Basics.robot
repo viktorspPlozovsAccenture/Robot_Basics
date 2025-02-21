@@ -8,6 +8,7 @@ Library     SeleniumLibrary
 Resource    Resources/keywords.resource
 Resource    Resources/Suite_Setup.resource
 
+
 *** Test Cases ***
 Test Case 1 -- Hello World!
     Set Selenium Speed    1 second
@@ -18,3 +19,5 @@ Test Case 1 -- Hello World!
     Click Element    //button[@id="L2AGLb"]
     Input Text    //*[@id="APjFqb"]    Hello world!
     Press Keys    //*[@id="APjFqb"]    RETURN
+
+    Sleep    5s

@@ -5,3 +5,7 @@ Library     Process
 Library     DateTime
 Library     OperatingSystem
 Library     SeleniumLibrary
+
+*** Variables ***
+
+#

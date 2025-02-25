@@ -6,3 +6,7 @@ Library     DateTime
 Library     OperatingSystem
 Library     SeleniumLibrary
 Resource    variables.resource
+
+*** Keywords ***
+
+#
